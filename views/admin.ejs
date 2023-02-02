@@ -1,0 +1,133 @@
+<%- include('partials/links') %>
+
+<div class="row col">
+  <%- include('partials/admin-nav') %>
+   <div class="col admin-content" id="admin_add">
+       
+       <form action="/add/menu" method="post">
+        <h2>Add New Item To The Menu</h2>
+      <div class="row form_container">
+       <div class="labels col-sm-4">
+        <label for="image">Image(Picture)</label>
+        <label for="recipe">Recipe</label>
+        <label for="foodName">Titile</label>
+        <label for="price">Price</label>
+        <label for="FoodType">Type</label>
+      </div>
+      <div class="inputs col">
+           <input type="file" name="image" required/>
+           <textarea cols="40" rows="5" name="recipe" required></textarea>
+           <input type="text" name="foodName" required>
+           <input type="number" step="0.01" name="price" id="" required/>
+           <select name="FoodType" id="" required>
+              <option value="breakfast">Breakfast</option>
+              <option value="burger">Burger</option>
+              <option value="pizza">Pizza</option>
+              <option value="fast_dish">Fast_Dish</option>
+              <option value="drink">Drink</option>
+            </select>
+      </div>
+      <div class="reset-button">
+        <button class="btn  btn-primary" type="reset" value="clear">Reset All</button>
+        <button class="btn  btn-primary" type="submit" value="submit">Add Item</button>
+          </div>
+      </div>  
+        </form>
+      </div>
+
+      <!-- ADMIN VIEW -->
+
+      <div class="row col" id="admin_view">
+        <div class="col">
+            <h2>Displayed Menu Contents</h2>
+            <div class="row menu-items">
+             <% allMenu.forEach(menus =>{ %>
+                 <div class="col-sm-3 menu-content" >
+                     <div class="row">
+                         <div class="col-sm-6">
+                             <img src="<%= menus.image %>" alt="">
+                         </div>
+                         <div class="col-sm-6">
+                             <div class="price"><%= menus.price %> ETB</div>
+                         </div>
+                     </div>
+                     <div class="row disc">
+                         <h4><%= menus.title %></h4>
+                         <p><%= menus.recipe %></p>
+                     </div>
+                 </div> 
+            <% }) %>   
+         </div>
+      
+        </div>
+      </div>
+
+      <!-- ADMIN UPDATE ITEMS -->
+<!-- 
+      <div class="row col" id="admin_update">
+        <div class="col">
+            <h2>UPDATE Item From The Menu</h2>
+            <div class="row menu-items">
+             <% allMenu.forEach(menus =>{ %>
+                 <div class="col-sm-3 menu-content" >
+                     <div class="row">
+                         <div class="col-sm-6">
+                             <img src="<%= menus.image %>" alt="">
+                         </div>
+                         <div class="col-sm-6">
+                             <div class="price"><%= menus.price %> ETB</div>
+                             
+                         </div>
+                     </div>
+                     <div class="row disc">
+                         <h4><%= menus.title %></h4>
+                         <p><%= menus.recipe %></p>
+                     </div>
+                     <div><a href="/admin/delete/<%= menus._id %>" class="btn btn-danger">Delete</a></div>
+                 </div>
+            <% }) %>
+             
+         </div>
+      
+        </div>
+      </div> -->
+
+  <!-- ADMIN DELETE ITEMS -->
+
+<div class="row col" id="admin_delete">
+  <div class="col">
+      <h2>delete Item To The Menu</h2>
+      <div class="row menu-items">
+       <% allMenu.forEach(menus =>{ %>
+           <div class="col-sm-3 menu-content" >
+               <div class="row">
+                   <div class="col-sm-6">
+                       <img src="<%= menus.image %>" alt="">
+                   </div>
+                   <div class="col-sm-6">
+                       <div class="price"><%= menus.price %> ETB</div>
+                     
+                   </div>
+               </div>
+               <div class="row disc">
+                   <h4><%= menus.title %></h4>
+                   <p><%= menus.recipe %></p>
+               </div>
+               <div><a href="/admin/delete/<%= menus._id %>" class="btn btn-danger">Delete</a></div>
+           </div>
+      <% }) %>
+       
+   </div>
+
+  </div>
+</div>
+
+  
+      
+
+   
+</div>
+
+
+
+<%- include('partials/close_links') %>

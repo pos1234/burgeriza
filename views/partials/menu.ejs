@@ -1,0 +1,129 @@
+<!-- MENU PAGE-->
+<div class="row menu" id="menu">
+    <h1>our menu</h1>
+    <div class="row menu-links">
+        <div class="col"><a id="menu_link" class="menu_link" href="#breakfast"><i class="fa-solid fa-egg"></i> Breakfast</a></div>
+        <div class="col"><a id="menu_link2" class="menu_link" href="#burger"><i class="fa-solid fa-burger"></i> Burgers</a></div>
+        <div class="col"><a id="menu_link3" class="menu_link" href="#pizza"><i class="fa-solid fa-pizza-slice"></i> Pizza</a></div>
+        <div class="col"><a id="menu_link4" class="menu_link" href="#fast_dish"><i class="fa-solid fa-fish"></i> Fasting Dishes</a></div>
+        <div class="col"><a id="menu_link5" class="menu_link" href="#drink"><i class="fa-solid fa-bottle-water"></i> Drinks</a></div>
+    </div>
+<!-- BREAKFAST -->
+
+    <div class="row col-sm-12 menu-items" id="breakfast">
+        <% allMenu.forEach(menus =>{ %>
+            <% if(menus.foodType == 'breakfast'){ %>
+            <div class="col-sm-3 menu-content" >
+                <div class="row">
+                    <div class="col-sm-6">
+                        <img src="<%= menus.image %>" alt="">
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="price"><%= menus.price %> ETB</div>
+                    </div>
+                </div>
+                <div class="row disc">
+                    <h4><%= menus.title %></h4>
+                    <p><%= menus.recipe %></p>
+                </div>
+            </div>
+       <% } }) %>
+    </div>
+
+<!-- BURGERS -->
+<div class="row menu-items" id="burger">
+    <% allMenu.forEach(menus =>{ %>
+        <% if(menus.foodType == 'burger'){ %>
+        <div class="col-sm-3 menu-content" >
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="<%= menus.image %>" alt="">
+                </div>
+                <div class="col-sm-6">
+                    <div class="price"><%= menus.price %> ETB</div>
+                </div>
+            </div>
+            <div class="row disc">
+                <h4><%= menus.title %></h4>
+                <p><%= menus.recipe %></p>
+            </div>
+        </div>
+   <% } }) %>
+    
+</div>
+
+<!-- PIZZA -->
+
+<div class="row menu-items" id="pizza">
+    <% allMenu.forEach(menus =>{ %>
+        <% if(menus.foodType == 'pizza'){ %>
+        <div class="col-sm-3 menu-content" >
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="<%= menus.image %>" alt="">
+                </div>
+                <div class="col-sm-6">
+                    <div class="price"><%= menus.price %> ETB</div>
+                </div>
+            </div>
+            <div class="row disc">
+                <h4><%= menus.title %></h4>
+                <p><%= menus.recipe %></p>
+            </div>
+        </div>
+   <% } }) %>
+    
+</div>
+<!-- FAST DISHES -->
+<div class="row menu-items" id="fast_dish">
+    <% allMenu.forEach(menus =>{ %>
+        <% if(menus.foodType == 'fast_dish'){ %>
+        <div class="col-sm-3 menu-content" >
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="<%= menus.image %>" alt="">
+                </div>
+                <div class="col-sm-6">
+                    <div class="price"><%= menus.price %> ETB</div>
+                </div>
+            </div>
+            <div class="row disc">
+                <h4><%= menus.title %></h4>
+                <p><%= menus.recipe %></p>
+            </div>
+        </div>
+   <% } }) %>
+    
+</div>
+<!-- DRINKS -->
+
+<div class="row menu-items" id="drink">
+    <% allMenu.forEach(menus =>{ %>
+        <% if(menus.foodType == 'drink'){ %>
+        <div class="col-sm-3 menu-content" >
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="<%= menus.image %>" alt="">
+                </div>
+                <div class="col-sm-6">
+                    <div class="price"><%= menus.price %> ETB</div>
+                </div>
+            </div>
+            <div class="row disc">
+                <h4><%= menus.title %></h4>
+                <p><%= menus.recipe %></p>
+            </div>
+        </div>
+   <% } }) %>
+    
+</div>
+
+</div>
+
+
+
+
+
+
+        
+    
